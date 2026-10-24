@@ -1,0 +1,63 @@
+# Python virtual environments
+.venv/
+venv/
+ENV/
+env/
+.conda/
+
+# Python caches and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Packaging and distribution
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Upstream / third-party source checkouts
+third_party/
+
+# Datasets, weights, and checkpoints
+data/
+datasets/
+weights/
+checkpoints/
+models/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+*.onnx
+
+# Training / evaluation outputs and experiment logs
+outputs/
+results/
+runs/
+wandb/
+tensorboard/
+*.log
+
+# Secrets and local environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# IDE and OS metadata
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
