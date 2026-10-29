@@ -70,3 +70,4 @@ Thumbs.db
 # Local archives and generated caches
 _local_archive/
 .ipynb_checkpoints/
+/tree.txt

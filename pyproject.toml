@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smol-vla-mod"
+version = "0.2.0.dev0"
+description = "Lightweight language-conditioned robot policy with YOLO-World visual pathway, direct instruction fusion, and auxiliary depth supervision."
+readme = "README.md"
+requires-python = ">=3.10"
+# NOTE: This pyproject.toml provides packaging scaffolding for the src-layout repository.
+# It explicitly avoids speculative ML dependency pins or lockfiles; full runtime environments
+# (PyTorch, Ultralytics, Transformers, LeRobot, etc.) are provisioned on remote compute
+# (e.g., Kaggle GPU environments) or edge deployment hardware (Jetson Orin Nano).
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+markers = [
+    "adapter_only: tests specific to the SpatialTokenAdapter module",
+    "yolo_backbone: tests using synthetic or mock YOLO backbones",
+    "real_yolo: tests requiring the real Ultralytics YOLO package",
+    "cuda: tests requiring CUDA device availability",
+]
