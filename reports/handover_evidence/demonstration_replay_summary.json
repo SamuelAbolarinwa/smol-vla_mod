@@ -1,0 +1,15 @@
+{
+  "planned_trials": 8,
+  "completed_trials": 8,
+  "execution_errors": [],
+  "per_mode": {
+    "recorded_actions": {
+      "completed": 4,
+      "successes": 4
+    },
+    "policy": {
+      "completed": 4,
+      "successes": 0
+    }
+  }
+}

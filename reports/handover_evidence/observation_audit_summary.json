@@ -1,0 +1,19 @@
+{
+  "observations_compared": 116,
+  "errors": [],
+  "by_track": {
+    "restored_state": {
+      "stored": 0.09618379715216523,
+      "simulator": 0.09440740501590174,
+      "stored_images_sim_state": 0.09277134649624003,
+      "sim_images_stored_state": 0.09653067383472812
+    },
+    "recorded_action_replay": {
+      "stored": 0.03315528250463554,
+      "simulator": 0.22116206586935566,
+      "stored_images_sim_state": 0.19969409530258395,
+      "sim_images_stored_state": 0.03511565738041043
+    }
+  },
+  "interpretation": "Predictions use identical noise across stored, simulator and hybrid observations. This is a diagnostic on training demonstrations, not a success-rate benchmark. No automatic correction or retraining was applied."
+}

@@ -1,10 +1,10 @@
 # Upstream LeRobot SmolVLA Inspection Report
 
-**Date / Timestamp:** 2026-10-24 08:22 UTC+1  
-**Candidate Upstream Checkout:** `third_party/lerobot`  
-**Upstream Repository:** `https://github.com/huggingface/lerobot.git`  
-**Inspected Commit SHA:** `d3793b7e36522321c1c455f0dc4826db3793dceb`  
-**Commit Message:** `feat(fastwam): add Faster-WAM (2.5-5.3x faster policy inference on A100) (#5049)`  
+**Date / Timestamp:** 2026-10-24 08:22 UTC+1
+**Candidate Upstream Checkout:** `third_party/lerobot`
+**Upstream Repository:** `https://github.com/huggingface/lerobot.git`
+**Inspected Commit SHA:** `d3793b7e36522321c1c455f0dc4826db3793dceb`
+**Commit Message:** `feat(fastwam): add Faster-WAM (2.5-5.3x faster policy inference on A100) (#5049)`
 **Exclusion Status:** `third_party/` is excluded via parent `.gitignore` (verified).
 
 ---
@@ -50,7 +50,7 @@ The forward path from input images to the language-backbone inputs is traced bel
 408:                     self.config.resize_imgs_with_padding[0],
 409:                     pad_value=0,
 410:                 )
-411: 
+411:
 412:             # Normalize from range [0,1] to [-1,1] as expacted by siglip
 413:             img = img * 2.0 - 1.0
 ...
@@ -79,7 +79,7 @@ The forward path from input images to the language-backbone inputs is traced bel
 235:     resized_img = F.interpolate(
 236:         img, size=(resized_height, resized_width), mode="bilinear", align_corners=False
 237:     )
-238: 
+238:
 239:     pad_height = max(0, height - resized_height)
 240:     pad_width = max(0, width - resized_width)
 241:     padded_img = F.pad(resized_img, (pad_width, 0, pad_height, 0), value=pad_value)
@@ -119,10 +119,10 @@ The forward path from input images to the language-backbone inputs is traced bel
 636:             # Normalize image embeddings
 637:             img_emb_dim = img_emb.shape[-1]
 638:             img_emb = img_emb * torch.tensor(img_emb_dim**0.5, dtype=img_emb.dtype, device=img_emb.device)
-639: 
+639:
 640:             bsize, num_img_embs = img_emb.shape[:2]
 641:             img_mask = img_mask[:, None].expand(bsize, num_img_embs)
-642: 
+642:
 643:             embs.append(img_emb)
 644:             pad_masks.append(img_mask)
 645:             att_masks += [0] * (num_img_embs)
@@ -132,7 +132,7 @@ The forward path from input images to the language-backbone inputs is traced bel
 666:         embs.append(lang_emb)
 667:         pad_masks.append(lang_masks)
 670:         att_masks += [0] * num_lang_embs
-671: 
+671:
 672:         state_emb = self.state_proj(state)
 673:         state_emb = state_emb[:, None, :] if state_emb.ndim == 2 else state_emb
 674:         embs.append(state_emb)

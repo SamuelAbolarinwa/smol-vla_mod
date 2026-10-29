@@ -26,11 +26,11 @@ dist/
 third_party/
 
 # Datasets, weights, and checkpoints
-data/
-datasets/
-weights/
-checkpoints/
-models/
+/data/
+/datasets/
+/weights/
+/checkpoints/
+/models/
 *.pt
 *.pth
 *.bin
@@ -54,6 +54,11 @@ tensorboard/
 *.key
 secrets/
 
+# Local backups
+backups/
+*.bak
+*.backup
+
 # IDE and OS metadata
 .idea/
 .vscode/
@@ -61,3 +66,8 @@ secrets/
 *~
 .DS_Store
 Thumbs.db
+
+# Local archives and generated caches
+_local_archive/
+.ipynb_checkpoints/
+/tree.txt
