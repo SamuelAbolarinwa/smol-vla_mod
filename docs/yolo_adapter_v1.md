@@ -1,10 +1,14 @@
 # YOLO Visual Tokenizer Architecture & Integration Specification (v1)
 
-**Status:** Implementation Complete (Local syntax verified; Kaggle numerical validation pending)
+**Status:** Historical / Phase 1 Reference (Preserved)
+**Context Note:** This document describes the earlier SmolVLA visual encoder-replacement experiment (YOLO11n tokenizer with retained SmolVLM language backbone). It is preserved as a historical baseline design and does not describe the new YOLO-World policy architecture (v2).
 **Revision Reference:** LeRobot upstream commit `d3793b7e36522321c1c455f0dc4826db3793dceb`
 **Primary Modules:**
 - `SpatialTokenAdapter` in [yolo_tokenizer.py](file:///home/abolarinwa-sa/Documents/Smol-VLAxYOLO/src/smol_vla_mod/vision/yolo_tokenizer.py#L46)
 - `YoloVisualTokenizer` in [yolo_tokenizer.py](file:///home/abolarinwa-sa/Documents/Smol-VLAxYOLO/src/smol_vla_mod/vision/yolo_tokenizer.py#L198)
+
+> [!NOTE]
+> **Historical Artifact Notice:** As part of the Architecture v2 overhaul, this module is maintained as an uncoupled baseline reference. The primary policy architecture now centers on a lightweight language-conditioned policy using a YOLO-World visual pathway, direct instruction embedding fusion, auxiliary depth supervision, and flow matching action chunks without an LLM backbone. See [architecture_v2.md](file:///home/abolarinwa-sa/Documents/Smol-VLAxYOLO/docs/architecture_v2.md).
 
 ---
 
